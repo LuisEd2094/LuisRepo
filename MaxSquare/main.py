@@ -8,7 +8,7 @@ def main():
             if os.path.splitext(sys.argv[i])[1].lower() == '.txt':
                 try:
                     fileObj = open(sys.argv[i])
-                except:
+                except OSError:
                     print("could not open file: %s" %(sys.argv[i]))
                 solvemap.solveMap(fileObj)
                 fileObj.close()
